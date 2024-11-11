@@ -2,6 +2,15 @@
 
 中文 | [English](README-EN.md)
 
+## News
+
+- 使用 GitHub Actions 进行自动化编译，系统采用 Windows,以获得正确的字体（首次编译大约需要 10min,后续会自动 Tex 环境会自动缓存，故时间将缩短至 2~3 min;
+    - 使用教程：fork/clone 本仓库之后，提交 commit 至 GitHub，Github Actions 会自动编译项目
+- 将默认字体由 fandol 修改为 Windows 默认字体 SimHei（黑体）和 SimSun（宋体）（直接将字体文件放在仓库中）
+    - 经初步测试，ubuntu/windows + vscode 和 GitHub Actions 三个地方均可正常编译，且字体同 Windows 系统下一致
+
+如果您觉得本项目对您帮助，可以给仓库点个star，这对我帮助很大~ 谢谢！
+
 ## 样例展示
 
 > [!NOTE]
