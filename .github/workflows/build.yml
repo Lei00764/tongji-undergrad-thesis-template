@@ -15,7 +15,7 @@ jobs:
     - name: Setup TeX Live
       uses: teatimeguest/setup-texlive-action@v3
       with:
-        packages: scheme-medium
+        packages: scheme-full
 
     - run: DISM.exe /Online /Add-Capability /CapabilityName:Language.Fonts.Hans~~~und-HANS~0.0.1.0
     - run: DISM.exe /Online /Add-Capability /CapabilityName:Language.Fonts.Hant~~~und-HANT~0.0.1.0
