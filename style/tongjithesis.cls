@@ -3,11 +3,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tongjithesis}[2022/05/16 Tongji Thesis Class]
-
+\usepackage{ifplatform} 
 
 % 加载 ctexart 类，有关该类简单说明，see https://www.overleaf.com/learn/latex/Chinese
 % 该类提供包括但不限于 \heiti \zihao 等指令
-\LoadClass[UTF8,a4paper,fontset=fandol]{ctexart}
+
+\LoadClass[UTF8,a4paper,fontset=none]{ctexart}
+
+\setmainfont{Times New Roman} % 英文字体使用 Times New Roman
+
+\ifwindows
+	\newfontface\heiti{SimHei}[Path=C:/Windows/Fonts/, AutoFakeBold=3]
+	\newfontface\songti{SimSun}[Path=C:/Windows/Fonts/, AutoFakeBold=3]
+\fi
+
+\iflinux
+	\newfontface\heiti{SimHei}[Path=/usr/share/fonts/truetype/, AutoFakeBold=3]
+	\newfontface\songti{SimSun}[Path=/usr/share/fonts/truetype/, AutoFakeBold=3]
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 若你想要用句点（．）替换句号（。）
@@ -378,12 +391,12 @@
 % 设置英文摘要页
 \newcommand{\MakeAbstractEng}[2]{
 	\clearpage
-	\begin{center}\heiti\xiaoer
+	\begin{center}\xiaoer
 		\ \\
 		\textbf{\tongjithesistitleeng}
 	\end{center}
 	\vspace{1pt}
-	\begin{center}\heiti\zihao{4}
+	\begin{center}\zihao{4}
 		\textbf{ABSTRACT}
 	\end{center}
 	\vspace{-0.5em}
@@ -394,7 +407,7 @@
 	\end{spacing}
 
 	\vskip 13.65pt % 小五字体单倍行距 13.65pt
-	\noindent{\heiti\zihao{5}
+	\noindent{\zihao{5}
 		\textbf{Key words: }#2
 	}
 	\par
