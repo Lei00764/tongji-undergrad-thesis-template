@@ -9,18 +9,14 @@
 % 该类提供包括但不限于 \heiti \zihao 等指令
 
 \LoadClass[UTF8,a4paper,fontset=none]{ctexart}
+% 设置默认中英文默认字体
+\setCJKmainfont{SimSun.ttf}[Path=./fonts/]
+\setmainfont{Times New Roman.ttf}[Path=./fonts/]
 
-\setmainfont{Times New Roman} % 英文字体使用 Times New Roman
-
-\ifwindows
-	\newfontface\heiti{SimHei}[Path=C:/Windows/Fonts/, AutoFakeBold=3]
-	\newfontface\songti{SimSun}[Path=C:/Windows/Fonts/, AutoFakeBold=3]
-\fi
-
-\iflinux
-	\newfontface\heiti{SimHei}[Path=/usr/share/fonts/truetype/, AutoFakeBold=3]
-	\newfontface\songti{SimSun}[Path=/usr/share/fonts/truetype/, AutoFakeBold=3]
-\fi
+\setCJKfamilyfont{zhsong}{SimSun}[Path=./fonts/, Extension=.ttf]
+\setCJKfamilyfont{zhhei}{SimHei}[Path=./fonts/, Extension=.ttf]
+\newcommand*{\songti}{\CJKfamily{zhsong}}
+\newcommand*{\heiti}{\CJKfamily{zhhei}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 若你想要用句点（．）替换句号（。）
